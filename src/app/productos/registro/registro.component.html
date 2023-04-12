@@ -1,0 +1,95 @@
+<div class="contenedor">
+<h1 class="centrar">Formulario registro producto</h1>
+<form autocomplete="off">
+    <fieldset>
+        <div class="elemento">
+            <label for="nombre">Nombre producto:</label><br/>
+
+            <input type="text" id="nombre"  name="nombre" required="true"
+            placeholder="Ingresa el nombre"
+            [(ngModel)]="producto.nombre"
+            ><br/>
+            <div *ngIf="verificarNombre"><h2>Completar el campo de nombre</h2></div>
+        </div>         
+
+        
+        <div class="elemento">
+            <label for="precio ">Precio producto:</label><br/>
+            <input type="number" id="precio" name="precio" required="true"
+            placeholder="Ingresa el precio"
+            [(ngModel)]="producto.precio"
+            ><br/>
+            <div *ngIf="verificarPrecio"><h2>Completar el campo de precio</h2></div>
+        </div>
+        
+        <div class="elemento">
+            <label for="stock">Stock del producto:</label><br/>
+            <input type="number" id="stock" name="stock" required="true"
+            placeholder="Ingresa el stock"
+            [(ngModel)]="producto.stock"
+            ><br/>
+            <div *ngIf="verificarStock"><h2>Completar el campo de stock</h2></div>
+        </div>
+        
+        <div class="elemento">
+            <label for="estado">Estado del producto:</label><br/>
+            <input type="text" id="estado" name="estado" required="true"
+            placeholder="Ingresa el estado"
+            [(ngModel)]="producto.estado"
+            ><br/>
+            <div *ngIf="verificarEstado"><h2>Completar el campo de estado</h2></div>
+        </div>
+        
+
+
+        <button type="submit" 
+        (click)="verificarRegistroNombre()" (click)="verificarRegistroPrecio()" 
+        (click)="verificarRegistroStock()"  (click)="verificarRegistroEstado()" 
+        (click)="agregar()"
+        >
+            Guardar
+        </button>
+        
+        <button (click)="borrarDatosPantalla()"> 
+            Restablecer 
+        </button>
+
+        <button (click)="vaciarElementos()">    
+            Eliminar registro
+        </button>
+
+    </fieldset>
+    <div class="elemento">
+    <h3 >Datos del producto </h3>
+    <!-- {{producto.nombre}} -->
+</div>
+
+</form>
+
+<table> 
+    <tr *ngIf="productos.length != 0; else noHayProductos"> 
+    <td>Nombre</td>
+     <td>Precio</td> 
+     <td>Stock</td> 
+     <td>Estado</td> 
+    </tr> 
+
+
+    <tr *ngFor="let p of productos" > 
+        <td>{{p.nombre}}</td>
+        <td>{{p.precio | currency: 'USD'}}</td> 
+        <td>{{p.stock | number}}</td> 
+        <td>{{p.estado}}</td> 
+    </tr> 
+</table>
+
+    <ng-template #noHayProductos>
+        <div class="elemento">
+            <label>No hay productos registrados</label>
+        </div>
+    </ng-template>
+
+</div>
+
+
+

@@ -1,1 +1,85 @@
 /* You can add global styles to this file, and also import other style files */
+.centrar{
+    text-align: center;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#7209b7,#3f37c0);
+}
+
+button {
+    background-color: black;
+    border-radius: 5px;
+    border: 0px;
+    color: white;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-left: 20px;
+    padding: 5px 10px;
+   }
+
+button:hover {
+    background-color: #3e4144;
+   }
+    
+button:focus{
+    outline: none;
+   }
+
+
+.contenedor{
+    margin: 50px auto;
+    width: 400px;
+    padding: 30px;
+    background: rgba(0,0,0,.5);
+    border-radius: 10px;
+}
+.contenedor h1{
+    margin: 0 0 30px;
+    padding: 0;
+    font-size: 30px;
+    color: #4cc9f0;
+    text-align: center;
+}
+.contenedor .elemento label {
+    color: #fff;
+}
+
+.contenedor .elemento input{
+    width: 100%;
+    padding: 10px 0;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 30px;
+}
+
+.contenedor .elemento h3 {
+    margin: 10 0 30px;
+    padding: 0;
+    font-size: 30px;
+    color: #4cc9f0;
+    text-align: center;
+}
+
+.contenedor .elemento h2 {
+    padding: 0;
+    font-size: 20px;
+    color: #f70303;
+    text-align: center;
+    margin-bottom: 30px;
+}
+table {
+    width: 100%;
+    border: 1px solid #f2eded;
+ }
+ th, td {
+    width: 25%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #faf8f8;
+    color: #fff
+ }
