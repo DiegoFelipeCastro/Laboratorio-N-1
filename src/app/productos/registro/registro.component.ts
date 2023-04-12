@@ -25,9 +25,7 @@ export class RegistroComponent   {
     if (this.producto.nombre != null && this.producto.precio != null &&  this.producto.stock != null && this.producto.nombre != null){
     if (this.producto.nombre.trim().length != 0 && String(this.producto.precio).trim().length != 0 && String(this.producto.stock).trim().length != 0 && 
     this.producto.estado.trim().length != 0) {
-   //   console.log(this.productos);
     this.productos.push(this.producto);
-    console.log(this.producto);
     this.producto = {
       nombre: "",
       precio: 0,
