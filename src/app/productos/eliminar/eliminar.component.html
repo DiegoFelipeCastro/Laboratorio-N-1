@@ -1,0 +1,7 @@
+<div *ngIf="productoId" class="contenedor">
+    <h1>¿En realidad desea eliminar el producto {{productoId}}?</h1>
+    <button class="botonSi" (click)="eliminar()" >Si</button>
+    <button class="botonNo" (click)="cerrarPantallaEliminar() " >No</button>
+
+</div>
+<app-listado *ngIf="pantallaEliminar" #listado ></app-listado>

@@ -1,1 +1,35 @@
+<div *ngIf="pantallaCerrar">
+    <table> 
+        <tr *ngIf="productos.length != 0; else noHayProductos"> 
+        <td>Nombre</td>
+         <td>Precio</td> 
+         <td>Stock</td> 
+         <td>Estado</td>
+         <td>Editar y Eliminar</td>
+        </tr> 
+    
+    
+        <tr *ngFor="let p of productos" > 
+            <td>{{p.nombre}}</td>
+            <td>{{p.precio | currency : "USD"}}</td> 
+            <td>{{p.stock | number}}</td> 
+            <td>{{p.estado}}</td> 
+            <td><button class="botonEditar" (click)="editar(p)">Editar</button>  
+                <button class="botonEliminar" (click)="eliminar(p.id)">Eliminar
+                </button></td>
+            
+        </tr>
+    </table>
+</div>
+
+
+    <app-eliminar  [productoId]="productoId"></app-eliminar>
+    <app-editar [producto]="producto"></app-editar>
+    
+
+        <ng-template #noHayProductos>
+            <div class="elemento">
+                <label>No hay productos registrados</label>
+            </div>
+        </ng-template>
 

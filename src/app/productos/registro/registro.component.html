@@ -54,9 +54,9 @@
             Restablecer 
         </button>
 
-        <button (click)="vaciarElementos()">    
+        <!-- <button (click)="vaciarElementos()">    
             Eliminar registro
-        </button>
+        </button> -->
 
     </fieldset>
     <div class="elemento">
@@ -66,30 +66,8 @@
 
 </form>
 
-<table> 
-    <tr *ngIf="productos.length != 0; else noHayProductos"> 
-    <td>Nombre</td>
-     <td>Precio</td> 
-     <td>Stock</td> 
-     <td>Estado</td> 
-    </tr> 
-
-
-    <tr *ngFor="let p of productos" > 
-        <td>{{p.nombre}}</td>
-        <td>{{p.precio | currency: 'USD'}}</td> 
-        <td>{{p.stock | number}}</td> 
-        <td>{{p.estado}}</td> 
-    </tr> 
-</table>
-
-    <ng-template #noHayProductos>
-        <div class="elemento">
-            <label>No hay productos registrados</label>
-        </div>
-    </ng-template>
-
 </div>
+
 
 
 

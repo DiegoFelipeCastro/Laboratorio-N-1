@@ -1,0 +1,50 @@
+<div  class="contenedor" *ngIf="producto.id">
+    <h1 class="centrar">Formulario para editar productos</h1>
+    <form autocomplete="off">
+        <fieldset>
+            <div class="elemento">
+                <label for="nombre">Nombre producto a editar:</label><br/>
+
+                <input type="text" id="nombre"  name="nombre" required="true"
+                placeholder="Ingresa el nombre"
+                [(ngModel)]="producto.nombre"
+                ><br/>
+            </div>         
+    
+            
+            <div class="elemento">
+                <label for="precio ">Precio producto a editar:</label><br/>
+                <input type="number" id="precio" name="precio" required="true"
+                placeholder="Ingresa el precio"
+                [(ngModel)]="producto.precio"
+                ><br/>
+            </div>
+            
+            <div class="elemento">
+                <label for="stock">Stock del producto a editar:</label><br/>
+                <input type="number" id="stock" name="stock" required="true"
+                placeholder="Ingresa el stock"
+                [(ngModel)]="producto.stock"
+                ><br/>
+            </div>
+            
+            <div class="elemento">
+                <label for="estado">Estado del producto a editar:</label><br/>
+                <input type="text" id="estado" name="estado" required="true"
+                placeholder="Ingresa el estado"
+                [(ngModel)]="producto.estado"
+                ><br/>
+            </div>
+            <button type="submit" (click)="actualizar()">
+                Actualizar
+            </button>
+            <button type="submit" (click)="cancelar()">
+                Cancelar
+            </button>
+
+            
+
+        </fieldset>
+    </form>
+    </div>
+    <app-listado *ngIf="pantallaEditar" #listado ></app-listado>
